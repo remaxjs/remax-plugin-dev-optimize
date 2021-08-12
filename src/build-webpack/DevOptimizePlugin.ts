@@ -40,15 +40,19 @@ export class DevOptimizePlugin {
 
       await Promise.all(
         assets.map(async asset => {
-          const content = compilation.assets[asset].source();
-          const hashcode = md5(content);
+          try {
+            const content = compilation.assets[asset].source();
+            const hashcode = md5(content);
 
-          const fileOutPath = path.join(distDir, asset);
-          const buf = await fs.readFile(fileOutPath);
-          const outHashCode = md5(buf);
+            const fileOutPath = path.join(distDir, asset);
+            const buf = await fs.readFile(fileOutPath);
+            const outHashCode = md5(buf);
 
-          if (outHashCode === hashcode) {
-            delete compilation.assets[asset];
+            if (outHashCode === hashcode) {
+              delete compilation.assets[asset];
+            }
+          } catch (e) {
+            // ignore error
           }
         })
       )
