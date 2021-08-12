@@ -1,0 +1,26 @@
+{
+  "name": "itegration",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Remax Project",
+  "main": "index.js",
+  "keywords": [],
+  "author": "sydeEvans <evan.wangjue@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "predev": "remax prebuild",
+    "dev": "remax build -t ali -w",
+    "build": "remax build -t ali"
+  },
+  "dependencies": {
+    "clsx": "^1.0.4",
+    "mobx": "^5.14.2",
+    "mobx-react": "^6.1.4",
+    "moment": "^2.29.1",
+    "react": "^16.8.6",
+    "remax": "^2.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  }
+}

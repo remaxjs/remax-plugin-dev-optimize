@@ -1,0 +1,17 @@
+{
+  "miniprogramRoot": "build/",
+  "scripts": {
+  },
+  "exclude": [
+    "src/**",
+    "node_modules",
+    "node_modules/**",
+    "babel.config.js",
+    "package-lock.json",
+    "project.config.json",
+    "package.json",
+    "remax.config.js",
+    "app.json",
+    "dist/**/*"
+  ]
+}
